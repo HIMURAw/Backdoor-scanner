@@ -1,5 +1,5 @@
 Backdoor Scan Results 
-Date: Sun 05/25/2025  0:59:40.99 
+Date: Sun 05/25/2025  1:22:17.77 
 ------------------------------------ 
 Malware A bulundu: 
 test.lua

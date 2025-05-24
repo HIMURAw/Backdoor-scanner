@@ -1,11 +1,45 @@
 @echo off
-setlocal enabledelayedexpansion
+chcp 65001 >nul
+cd /d "%~dp0"
+title Pixel Scanner v1.1.0
+mode con: cols=170 lines=40
+color 0A
 
-:: Language Selection
-echo Select Language / Dil Seciniz:
-echo 1. Turkish / Turkce
-echo 2. English / Ingilizce
-set /p lang_choice=
+:: Version
+set "version=1.1.0"
+
+:: Clear screen and show ASCII art
+cls
+echo.                  
+echo                                         ██████╗ ██╗██╗  ██╗███████╗ ██╗         ███████╗ ██████╗ █████╗ ███╗   ██╗███╗   ██╗███████╗██████╗ 
+echo                                         ██╔══██╗██║╚██╗██╔╝██╔════  ██║         ██╔════╝██╔════╝██╔══██╗████╗  ██║████╗  ██║██╔════╝██╔══██╗
+echo                                         ██████╔╝██║ ╚███╔╝ █████╗   ██║         ███████╗██║     ███████║██╔██╗ ██║██╔██╗ ██║█████╗  ██████╔╝
+echo                                         ██╔═══╝ ██║ ██╔██╗ ██╔══╝   ██║         ╚════██║██║     ██╔══██║██║╚██╗██║██║╚██╗██║██╔══╝  ██╔══██╗
+echo                                         ██║     ██║██╔╝ ██╗███████╗ ███████╗    ███████║╚██████╗██║  ██║██║ ╚████║██║ ╚████║███████╗██║  ██║
+echo                                         ╚═╝     ╚═╝╚═╝  ╚═╝╚══════╝ ╚══════╝    ╚══════╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═══╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝
+echo.                                        
+echo                                                              ╔══════════════════════════════════════════════════════════╗
+echo                                                              ║                     Language Selection                   ║
+echo                                                              ║                     Dil Secimi                           ║
+echo                                                              ╠══════════════════════════════════════════════════════════╣
+echo                                                              ║                                                          ║
+echo                                                              ║   [1] Turkish / Turkce                                   ║
+echo                                                              ║   [2] English / Ingilizce                                ║
+echo                                                              ║                                                          ║
+echo                                                              ╚══════════════════════════════════════════════════════════╝
+echo.                                                             
+echo                                                                      Select your language / Dilinizi seciniz:
+set /p lang_choice=    
+
+:: Validate input
+if not "%lang_choice%"=="1" if not "%lang_choice%"=="2" (
+    color 0C
+    echo.
+    echo Invalid selection! Please choose 1 or 2.
+    echo Gecersiz secim! Lutfen 1 veya 2 secin.
+    timeout /t 3 >nul
+    goto :eof
+)
 
 if "%lang_choice%"=="1" (
     set "msg_welcome=Bu araci 'resources' klasorune koymalisiniz!"
