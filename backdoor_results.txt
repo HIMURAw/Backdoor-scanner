@@ -1,0 +1,15 @@
+Backdoor Scan Results 
+Date: Sun 05/25/2025  0:59:40.99 
+------------------------------------ 
+Malware A bulundu: 
+test.lua
+Malware B bulundu: 
+test.lua
+Malware C bulundu: 
+test.lua
+Malware D bulundu: 
+test.lua
+Malware E bulundu: 
+test.lua
+Malware F bulundu: 
+test.lua
